@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>레이아웃 실습</title>
+    <style>
+      /* Simple Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #58666e;
+        background-color: #f0f3f4;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        width: 100%;
+        height: 60px;
+        z-index: 2000;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+        position: fixed;
+        top: 0;
+      }
+      .logo {
+        display: inline-block;
+        height: 36px;
+        margin: 12px 0 12px 25px;
+      }
+      .logo > img { height: 36px; }
+      nav {
+        float: right;
+      }
+      .nav-items > li {
+        display: inline-block;
+      }
+      .nav-items > li > a {
+        line-height: 60px;
+        padding: 0 30px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-items > li > a:visited,
+      .nav-items > li > a:hover {
+        color: rgba(0, 0, 0, 0.8);
+      }
+      #content-wrap:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      aside {
+        float: left;
+        width: 20%;
+      }
+      section {
+        float: right;
+        width: 80%;
+      }
+      #wrap {
+        /* margin-top = header height */
+        margin-top: 60px;
+      }
+      aside {
+  /* for fixed side bar */
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+
+  width: 200px;
+  padding-top: 25px;
+  background-color: #333;
+}
+  /* aside navigation */
+  aside > ul {
+    width: 200px;
+  }
+  aside > ul > li > a {
+    display: block;
+    color: #fff;
+    padding: 10px 0 10px 20px;
+  }
+  aside > ul > li > a.active {
+    background-color: #4CAF50;
+  }
+  aside > ul > li > a:hover:not(.active) {
+    background-color: #555;
+  }
+  aside > h1 {
+    padding: 20px 0 20px 20px;
+    color: #fff;
+  }
+  /* Section */
+  section {
+    float: right;
+    /* aside width */
+    margin-left: 200px;
+  }
+  article {
+    margin: 10px;
+    padding: 25px;
+    background-color: white;
+  }
+
+  footer {
+  /* footer를 aside위에 올리기 위해 사용(부유객체) */
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  padding: 0 25px;
+  line-height: 60px;
+  color: #8a8c8f;
+  border-top: 1px solid #dee5e7;
+  background-color: #f2f2f2;
+}
+    </style>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <a class="logo" href="#home">
+          <img src="https://poiemaweb.com/img/logo.png" height="36px">
+        </a>
+        <nav>
+          <ul class="nav-items">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="content-wrap">
+        <aside>
+          <h1>Aside</h1>
+          <ul>
+            <li><a href="#" class="active">London</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Tokyo</a></li>
+            <li><a href="#">Newyork</a></li>
+          </ul>
+        </aside>
+        <section>
+          <article id="london">
+            <h1>London</h1>
+            <p>
+              미국 질병통제예방센터(CDC)는 이스라엘 보건 당국이 화이자의 코로나19 백신과 심근염 발생의 상관관계 가능성을 보고한 후 조사에 착수해 이같이 밝혔다고 로이터 통신이 10일(현지시간) 보도했다. 백신부작용신고시스템(VAERS)에 보고된 환자 중 절반 이상은 12∼24세로 2차 접종을 마친 뒤 이 같은 부작용을 신고한 것으로 나타났다. 또 16∼24세 사이에서는 2차 접종을 마친 후 283건의 심근염이 발생했다. 미국 인구 데이터를 기반으로 한 예상 발병 건수는 10∼102건 정도라고 CDC는 설명했다. 특히 심근염이 발병한 평균 연령은 24세로 남성에서 심근염 발병 비율이 높아 80% 가까이 기록했던 것으로 집계됐다. 백신안전데이터링크(VSD) 역시 16∼39세 사이에서 해당 백신의 2차 접종을 마친 경우 심근염 발생 비율이 높아졌다고 확인했다. 부작용이 발생한 환자 중 일부는 입원 치료를 받았으나 대부분 회복했다고 CDC는 밝혔다.s
+            </p>
+          </article>
+          <article id="london">
+            <h1>London</h1>
+            <p>
+              미국 질병통제예방센터(CDC)는 이스라엘 보건 당국이 화이자의 코로나19 백신과 심근염 발생의 상관관계 가능성을 보고한 후 조사에 착수해 이같이 밝혔다고 로이터 통신이 10일(현지시간) 보도했다. 백신부작용신고시스템(VAERS)에 보고된 환자 중 절반 이상은 12∼24세로 2차 접종을 마친 뒤 이 같은 부작용을 신고한 것으로 나타났다. 또 16∼24세 사이에서는 2차 접종을 마친 후 283건의 심근염이 발생했다. 미국 인구 데이터를 기반으로 한 예상 발병 건수는 10∼102건 정도라고 CDC는 설명했다. 특히 심근염이 발병한 평균 연령은 24세로 남성에서 심근염 발병 비율이 높아 80% 가까이 기록했던 것으로 집계됐다. 백신안전데이터링크(VSD) 역시 16∼39세 사이에서 해당 백신의 2차 접종을 마친 경우 심근염 발생 비율이 높아졌다고 확인했다. 부작용이 발생한 환자 중 일부는 입원 치료를 받았으나 대부분 회복했다고 CDC는 밝혔다.s
+            </p>
+          </article>
+          <article id="london">
+            <h1>London</h1>
+            <p>
+              미국 질병통제예방센터(CDC)는 이스라엘 보건 당국이 화이자의 코로나19 백신과 심근염 발생의 상관관계 가능성을 보고한 후 조사에 착수해 이같이 밝혔다고 로이터 통신이 10일(현지시간) 보도했다. 백신부작용신고시스템(VAERS)에 보고된 환자 중 절반 이상은 12∼24세로 2차 접종을 마친 뒤 이 같은 부작용을 신고한 것으로 나타났다. 또 16∼24세 사이에서는 2차 접종을 마친 후 283건의 심근염이 발생했다. 미국 인구 데이터를 기반으로 한 예상 발병 건수는 10∼102건 정도라고 CDC는 설명했다. 특히 심근염이 발병한 평균 연령은 24세로 남성에서 심근염 발병 비율이 높아 80% 가까이 기록했던 것으로 집계됐다. 백신안전데이터링크(VSD) 역시 16∼39세 사이에서 해당 백신의 2차 접종을 마친 경우 심근염 발생 비율이 높아졌다고 확인했다. 부작용이 발생한 환자 중 일부는 입원 치료를 받았으나 대부분 회복했다고 CDC는 밝혔다.s
+            </p>
+          </article>
+          <article id="london">
+            <h1>London</h1>
+            <p>
+              미국 질병통제예방센터(CDC)는 이스라엘 보건 당국이 화이자의 코로나19 백신과 심근염 발생의 상관관계 가능성을 보고한 후 조사에 착수해 이같이 밝혔다고 로이터 통신이 10일(현지시간) 보도했다. 백신부작용신고시스템(VAERS)에 보고된 환자 중 절반 이상은 12∼24세로 2차 접종을 마친 뒤 이 같은 부작용을 신고한 것으로 나타났다. 또 16∼24세 사이에서는 2차 접종을 마친 후 283건의 심근염이 발생했다. 미국 인구 데이터를 기반으로 한 예상 발병 건수는 10∼102건 정도라고 CDC는 설명했다. 특히 심근염이 발병한 평균 연령은 24세로 남성에서 심근염 발병 비율이 높아 80% 가까이 기록했던 것으로 집계됐다. 백신안전데이터링크(VSD) 역시 16∼39세 사이에서 해당 백신의 2차 접종을 마친 경우 심근염 발생 비율이 높아졌다고 확인했다. 부작용이 발생한 환자 중 일부는 입원 치료를 받았으나 대부분 회복했다고 CDC는 밝혔다.s
+            </p>
+          </article>
+        </section>
+      </div>
+      <footer>© Copyright 2016 ungmo2</footer>
+    </div>
+  </body>
+</html>
